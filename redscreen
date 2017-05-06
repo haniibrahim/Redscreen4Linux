@@ -1,0 +1,17 @@
+#!/bin/bash
+# Switch screen to red vision to avoid destroying dark adaption of eyes
+# when star gazing
+# License: GLP 3.0
+if [ -e ~/.redscreen ] # check if redscreen is active by testing for flag file
+then
+	zenity --question --text="Set screen back to normal?"
+	if [ $? -eq 0 ]
+	then
+		xcalib -clear && rm ~/.redscreen
+	fi 
+else
+	xcalib -green .1 0 1 -alter 
+	xcalib -blue .1 0 1 -alter
+	touch ~/.redscreen # set redscreen flag file
+fi
+
