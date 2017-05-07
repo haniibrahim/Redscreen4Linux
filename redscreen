@@ -3,12 +3,27 @@
 # when star gazing
 # License: GLP 3.0
 if [ -e ~/.redscreen ] # check if redscreen is active by testing for flag file
-then
-	zenity --question --text="Set screen back to normal?"
+then	
+	# Test for Zenity
+	which zenity  >/dev/null 2>&1
 	if [ $? -eq 0 ]
 	then
-		xcalib -clear && rm ~/.redscreen
-	fi 
+		zenity --question --text="Set screen back to normal?" >/dev/null 2>&1
+		if [ $? -eq 0 ]
+		then
+			xcalib -clear && rm ~/.redscreen
+		fi
+	fi
+	# Test for Kdialog
+	which kdialog >/dev/null 2>&1
+	if [ $? -eq 0 ]
+	then
+		kdialog --yesno "Set screen back to normal?"
+		if [ $? -eq 0 ]
+		then
+			xcalib -clear && rm ~/.redscreen
+		fi
+	fi
 else
 	xcalib -green .1 0 1 -alter 
 	xcalib -blue .1 0 1 -alter
