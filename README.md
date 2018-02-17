@@ -2,7 +2,7 @@
 
 Bash script that set the screen to red vision.
 
-Redscreen4Linux keeps your eye's dark adaption.  E.g. while you using your computer during star gazing. It should work with all GNU/Linux-desktops and works system-wide with all applications.
+Redscreen4Linux keeps your eye's dark adoption.  E.g. while you using your computer during star gazing. It should work with all GNU/Linux-desktops and works system-wide with all applications.
 
 I provide a **deb-installer** (Ubuntu/Mint,etc.) and a general **GNU/Linux installation script** (for all distributions) incl. icon and desktop-file at the [Release section](https://github.com/haniibrahim/Redscreen4Linux/releases). This makes usage easy. Just click on the Redscreen4Linux-icon and the screen switches to red. Another click on the icon prompt you first (if Zenity or Kdialog is installed) before it switches to normal vision.
 
